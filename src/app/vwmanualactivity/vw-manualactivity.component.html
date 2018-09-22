@@ -1,0 +1,49 @@
+
+<div class="w3-container">
+  <button id="edit" onclick="document.getElementById('id02').style.display='block'; " class="btn btn-primary">Add New Training</button>
+  <div id="id02" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">X</span><br/>
+
+            <form (submit)="addManual('hi')">
+                <div>
+                        <div class="form-group">
+                            <label>Training Name</label>
+                            <input type="text" [(ngModel)]="tname" name="tname" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                          <label>Training Status</label>
+                          <input type="text" [(ngModel)]="tstatus" name="tstatus" class="form-control"/>
+                      </div>
+                      <div class="form-group">
+                        <label>Target Date</label>
+                        <input type="text" [(ngModel)]="tdate" name="tdate" class="form-control"/>
+                    </div>
+                </div>
+
+                   <input type="submit" onclick="document.getElementById('id02').style.display='none'" class="btn btn-primary" value="Add"/>
+                   <input type="submit" onclick="document.getElementById('id02').style.display='none'" class="btn btn-danger" value="Close"/>
+
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table *ngIf='isSelected' id="vwmanual-activity" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+        <thead>
+                <tr>
+                    <th>Training Name</th>
+                    <th>Training Status</th>
+                    <th>Target Date</th>
+                </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let manualactivity of manualactivities" >
+                 <td><a [routerLink]="['/appdetails',manualactivity._id]"> {{ manualactivity.tname }}</a></td>
+                 <td>{{ manualactivity.tstatus }}</td>
+                 <td>{{manualactivity.tdate}} </td>
+              </tr>
+        </tbody>
+      </table>

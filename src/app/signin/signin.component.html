@@ -1,0 +1,24 @@
+<br/>
+<div class="container-fluid">
+  <form (submit)="signin()"  class="modal-content">
+    <div class="container-fluid">
+      <h1>Sign In</h1>
+      <hr>
+      <label for="email"><b>Email</b></label>
+      <input type="text"  [(ngModel)]="email" placeholder="Enter Email" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" [(ngModel)]="password" placeholder="Enter Password" name="psw" required>
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+      <p>Not have an account?  <a routerLink="signup"> Sign-Up</a></p>
+      <br/>
+      <br/>
+      <div class="clearfix">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Login</button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,21 @@
+<br/>
+<br/>
+<table id="user-table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+        <thead>
+                <tr>
+                    <th>Emp ID</th>
+                    <th>Emp Name</th>
+                    <th>Contact No</th>
+                    <th>Interested Stack</th>
+                </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let contact of contacts" >
+                 <td><a [routerLink]="['/appdetails',contact._id]"> {{ contact.emp_id }}</a></td>
+                 <td>{{ contact.emp_name}}</td>
+                 <td>{{ contact.emp_con }}</td>
+                 <td>{{contact.emp_stack}} </td>
+              </tr>
+        </tbody>
+      </table>
+

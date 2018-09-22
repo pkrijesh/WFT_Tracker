@@ -1,0 +1,29 @@
+<br/>
+<br/>
+<table id="example" class="table table-striped table-bordered nowrap" style="width:100%">
+  <thead>
+      <tr>
+          <th>Employee ID</th>
+          <th>Employee Name</th>
+          <th>Extn.</th>
+          <th>Interested Stack</th>
+          <th>Band</th>
+          <th>Manager</th>
+          <th>Platform</th>
+          <th>Location</th>
+      </tr>
+  </thead>
+  <tbody>
+
+      <tr *ngFor="let contact of contacts" >
+              <td><a [routerLink]="['/appdetails',contact._id]"> {{ contact.emp_id }}</a></td>
+              <td>{{contact.emp_name}}</td>
+              <td>{{contact.emp_con }}</td>
+              <td>{{contact.emp_stack}} </td>
+              <td>{{contact.emp_band}} </td>
+              <td>{{contact.emp_mgr}} </td>
+              <td>{{contact.emp_form}} </td>
+              <td>{{contact.emp_loc}} </td>
+       </tr>
+   </tbody>
+  </table>

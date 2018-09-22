@@ -1,0 +1,21 @@
+
+mat-toolbar{
+    background-color: #002c5f;
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 16px;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    position: fixed;
+    z-index:1;
+}
+#header-logo{
+color: white;
+font-size: 25px;
+margin-left: 5px;
+}
+  .menu-spacer {
+    flex: 1 1 auto;
+  }

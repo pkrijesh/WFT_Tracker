@@ -1,0 +1,121 @@
+
+ <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="over" align="end">
+        <mat-toolbar-row class="user-card">
+            <img src="../assets/home/ProfileM.jpg" width="48" height="48" class="user-avatar"/>
+            <span>{{loginuser}} <small class="online-bio">{{role}}</small></span>
+        </mat-toolbar-row>
+        <mat-list dense>
+
+            <mat-list-item>
+              <mat-icon matListIcon>assignment</mat-icon>
+              <a routerLink="App1"> View Employee</a>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListIcon>assignment</mat-icon>
+              <a routerLink="App2">Add Employee</a>
+            </mat-list-item>
+            <mat-list-item *ngIf="isAdmin">
+              <mat-icon matListIcon>assignment</mat-icon>
+              <a routerLink="App2">Report</a>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <h3 matSubheader>User Actions</h3>
+            <mat-list-item>
+              <mat-icon matListIcon>launch</mat-icon>
+              <a (click)=" logout() ; sidenav.toggle()" >Logout</a>
+            </mat-list-item>
+          </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <main>
+            <mat-toolbar color="primary" class="example-toolbar">
+                <button mat-icon-button routerLink="" >
+                  <img src="../assets/home/home.png" style="width:35px">
+                </button>
+                <span id="header-logo">Work Force Transformation</span>
+                <span class="menu-spacer"></span>
+                <button *ngIf="islogin" mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon class="example-icon">menu</mat-icon>
+                </button>
+              </mat-toolbar>
+              <br/><br/><br/>
+              <router-outlet></router-outlet>
+        </main>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+ <!--<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over" align="end">
+      <mat-toolbar-row class="user-card">
+        <img src="https://image.freepik.com/free-icon/important-person_318-10744.jpg" width="48" height="48" class="user-avatar"/>
+        <span>Rakesh Padoli <small class="online-bio">Developer</small></span>
+      </mat-toolbar-row>
+
+    <br/>
+    <mat-list dense>
+      <mat-list-item>
+        <mat-icon matListIcon>dashboard</mat-icon>
+        <a routerLink=""> Full App</a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListIcon>assignment</mat-icon>
+        <a routerLink="App1"> App1</a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListIcon>assignment</mat-icon>
+        <a routerLink="App2">App2 </a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListIcon>assignment</mat-icon>
+        App3
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <h3 matSubheader>User Actions</h3>
+      <mat-list-item>
+        <mat-icon matListIcon>launch</mat-icon>
+        Logout
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <main>
+    <div class="fixed-header">
+    <mat-toolbar id="test" >
+      <mat-toolbar-row>
+        <span id="header-logo"> Atlas-Aspire</span>
+        <span class="menu-spacer"></span>
+        <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon class="example-icon">menu</mat-icon>
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    </div>
+    <mat-list style="padding-top:57px">
+         <br/>
+         <router-outlet></router-outlet>
+    </mat-list>
+
+  </main>
+</mat-sidenav-container>
+-->
+
+
+
+
+
+<!--
+
+<div class="container-fluid">
+<mat-sidenav-container class="example-container" >
+  <mat-sidenav #sidenav [mode]="over">
+    <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
+    All new Link comes below
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+</div>
+-->
